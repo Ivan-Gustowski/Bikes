@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/icon.png">
+	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+	<title>Bicicletas Online - Carrito</title>
+</head>
+<body>
+  <header>
+		<nav>
+			<a href="./index.html"><img src="./img/logo.png" alt="Logo" id="logo"></a>
+			<div>
+				<a href="./cart.html" id="cart"><img src="./img/shopping-cart.png" alt=""><span id="cuenta-carrito">0</span></a>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<p id="carrito-vacio">Ups! El carrito está vacío <a href="./index.html">¡ELIGE ALGUN PRODUCTO AQUI!</a></p>
+		<section id="cart-container">
+		</section>
+        <section id="totales">
+            <p class="col-text">Total unidades: <span id="cantidad">0</span></p>
+            <p class="col-text">Total precio: $<span id="precio">0</span></p>
+            <button class="col-text" id="reiniciar">Vaciar carrito</button>
+        </section>
+    </main>
+
+
+	<script src="./js/bicicletas.js"></script>
+    <script src="./js/cartService.js"></script>
+	<script src="./js/cart.js"></script>
+</body>
+</html>
