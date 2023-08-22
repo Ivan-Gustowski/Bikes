@@ -66,6 +66,21 @@ function actualizarTotales() {
   }
 }
 
+const botonComprar = document.getElementById("comprar");
+
+botonComprar.addEventListener("click", () => {
+  mostrarMensajeCompraExitosa();
+});
+
+function mostrarMensajeCompraExitosa() {
+  Swal.fire({
+    title: 'Compra exitosa',
+    text: 'Gracias por tu compra. Tu pedido ha sido procesado.',
+    icon: 'success',
+    confirmButtonText: 'Aceptar'
+  });
+}
+
 document.getElementById("reiniciar").addEventListener("click", () => {
   contenedorTarjetas.innerHTML = "";
   reiniciarCarrito();

@@ -41,3 +41,54 @@
     border:unset;
     cursor:pointer;
   }
+
+
+  .filtro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .filtro label,
+  .filtro input,
+  .filtro button {
+    margin: 0;
+  }
+
+  .filtro label {
+    color: #f5f5f5;
+  }
+
+  .filtro input[type="number"] {
+    width: 100px;
+  }
+
+  .filtro button {
+    background-color: #4CAF50;
+    color: #f5f5f5;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* #productos-container {
+    display: flex;
+    align-items: center;
+  }
+
+  label, input, button {
+    margin: 0;
+  }
+
+  input[type="number"] {
+    width: 50px;
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  } */

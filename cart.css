@@ -18,6 +18,7 @@
   .tarjeta-producto h3{
     width: 130px;
   }
+  
   .tarjeta-producto div{
     background-color: var(--color-acento-claro);
     padding: 3px;
@@ -33,7 +34,7 @@
     color: #f5f5f5;
   }
 
-  #reiniciar {
+  .b-cart {
     background-color: rgb(36, 27, 27);
     padding: 10px;
   }

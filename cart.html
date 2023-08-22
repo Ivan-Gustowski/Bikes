@@ -4,31 +4,43 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="shortcut icon" href="./img/icon.png">
 	<link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="cart.css">
 	<title>Bicicletas Online - Carrito</title>
 </head>
 <body>
-  <header>
-		<nav>
-			<a href="./index.html"><img src="./img/logo.png" alt="Logo" id="logo"></a>
-			<div>
-				<a href="./cart.html" id="cart"><img src="./img/shopping-cart.png" alt=""><span id="cuenta-carrito">0</span></a>
-			</div>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="./index.html"><img src="./img/logo.png" alt="Logo" id="logo"></a>
+		  <div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+			  <li class="nav-item">
+				<a class="nav-link" href="./cart.html" id="cart"><img src="./img/shopping-cart.png" alt=""><span id="cuenta-carrito">0</span></a>
+			  </li>
+			</ul>
+		  </div>
 		</nav>
 	</header>
-	<main>
-		<p id="carrito-vacio">Ups! El carrito está vacío <a href="./index.html">¡ELIGE ALGUN PRODUCTO AQUI!</a></p>
+
+	<main class="container mt-4">
+		<p id="carrito-vacio" class="text-center">Ups! El carrito está vacío <a href="./index.html">¡ELIGE ALGUN PRODUCTO AQUI!</a></p>
 		<section id="cart-container">
 		</section>
-        <section id="totales">
-            <p class="col-text">Total unidades: <span id="cantidad">0</span></p>
-            <p class="col-text">Total precio: $<span id="precio">0</span></p>
-            <button class="col-text" id="reiniciar">Vaciar carrito</button>
-        </section>
-    </main>
+		<section id="totales" class="text-center mt-4">
+		  <p class="col-text">Total unidades: <span id="cantidad">0</span></p>
+		  <p class="col-text">Total precio: $<span id="precio">0</span></p>
+		  <button class="col-text b-cart btn btn-secondary" id="reiniciar">Vaciar carrito</button>
+		  <button class="col-text b-cart btn btn-primary" id="comprar">Finalizar compra</button>
+		</section>
+	</main>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 	<script src="./js/bicicletas.js"></script>
     <script src="./js/cartService.js"></script>
