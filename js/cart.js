@@ -24,20 +24,29 @@ function crearTarjetasProductosCarrito() {
     `;
       contenedorTarjetas.appendChild(nuevaBicicleta);
       nuevaBicicleta
-        .getElementsByTagName("button")[0]
-        .addEventListener("click", (e) => {
-          const cantidadElement = e.target.parentElement.getElementsByClassName("cantidad")[0];
-          cantidadElement.innerText = restarAlCarrito(producto);
-          crearTarjetasProductosCarrito();
-          actualizarTotales();
-        });
-      nuevaBicicleta
-        .getElementsByTagName("button")[1]
-        .addEventListener("click", (e) => {
-          const cantidadElement = e.target.parentElement.getElementsByClassName("cantidad")[0];
-          cantidadElement.innerText = agregarAlCarrito(producto);
-          actualizarTotales();
-        });
+      .getElementsByTagName("button")[0]
+      .addEventListener("click", async (e) => {
+        const cantidadElement = e.target.parentElement.getElementsByClassName("cantidad")[0];
+        cantidadElement.innerText = restarAlCarrito(producto);
+        crearTarjetasProductosCarrito();
+        await delay(1500);
+        
+        actualizarTotales();
+      });
+    
+    nuevaBicicleta
+      .getElementsByTagName("button")[1]
+      .addEventListener("click", async (e) => {
+        const cantidadElement = e.target.parentElement.getElementsByClassName("cantidad")[0];
+        cantidadElement.innerText = agregarAlCarrito(producto);
+        await delay(1500);
+        
+        actualizarTotales();
+      });
+    
+    async function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
     });
   }
   revisarMensajeVacio();
@@ -69,7 +78,9 @@ function actualizarTotales() {
 const botonComprar = document.getElementById("comprar");
 
 botonComprar.addEventListener("click", () => {
-  mostrarMensajeCompraExitosa();
+  setTimeout(() => {
+    mostrarMensajeCompraExitosa();
+  }, 2000);
 });
 
 function mostrarMensajeCompraExitosa() {
@@ -81,11 +92,17 @@ function mostrarMensajeCompraExitosa() {
   });
 }
 
-document.getElementById("reiniciar").addEventListener("click", () => {
+
+document.getElementById("reiniciar").addEventListener("click", async () => {
   contenedorTarjetas.innerHTML = "";
+  await delay(1500); 
   reiniciarCarrito();
   revisarMensajeVacio();
 });
+
+async function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 /** Muestra o esconde el mensaje de que no hay nada en el carrito */
 function revisarMensajeVacio() {

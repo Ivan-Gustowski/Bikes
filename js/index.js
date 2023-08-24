@@ -13,10 +13,16 @@ function crearTarjetasProductosInicio(productos){
     contenedorTarjetas.appendChild(nuevaBicicleta);
 
     const botonAgregar = nuevaBicicleta.querySelector(".btn-agregar");
-    botonAgregar.addEventListener("click", () => {
+    botonAgregar.addEventListener("click", async () => {
+      await delay(1500);
+    
       agregarAlCarrito(producto);
       mostrarAlert();
     });
+    
+    async function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
   });
 }
 
@@ -34,7 +40,9 @@ crearTarjetasProductosInicio(bicicletas);
 
 
 
-document.getElementById("filtrarButton").addEventListener("click", function() {
+document.getElementById("filtrarButton").addEventListener("click", async function() {
+  await delay(1500);
+
   const precioMinimo = parseFloat(document.getElementById("precioMinimo").value);
   const precioMaximo = parseFloat(document.getElementById("precioMaximo").value);
 
@@ -51,3 +59,7 @@ document.getElementById("filtrarButton").addEventListener("click", function() {
     }
   }
 });
+
+async function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
